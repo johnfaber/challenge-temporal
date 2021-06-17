@@ -12,9 +12,10 @@ import (
 /*Server handler*/
 func Handler() {
 	router := mux.NewRouter()
+
 	PORT := os.Getenv("PORT")
 	if PORT == "" {
-		PORT = "8080"
+		PORT = "8081"
 	}
 	handler := cors.AllowAll().Handler(router)
 	log.Fatal(http.ListenAndServe(":"+PORT, handler))
